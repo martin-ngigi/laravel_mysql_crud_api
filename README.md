@@ -111,3 +111,16 @@ Migrate:
     }
 ]
 ```
+
+3. GET -> get one student by id:
+- endpoint ->  http://127.0.0.1:8000/api/all/1
+- response :
+```
+{
+    "id": 1,
+    "created_at": "2023-03-02T08:10:01.000000Z",
+    "updated_at": "2023-03-02T08:10:01.000000Z",
+    "name": "Martin",
+    "age": 22
+}
+```

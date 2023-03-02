@@ -35,3 +35,5 @@ Route::post('/create', [StudentController::class, 'store']);
  */
 Route::get('/all', [StudentController::class, 'index']);
 //
+
+Route::get('/all/{id}', [StudentController::class, 'show']);

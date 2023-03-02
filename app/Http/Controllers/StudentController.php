@@ -39,6 +39,7 @@ class StudentController extends Controller
     }
 
     /**
+     * GET -> get one user by id
      * Display the specified resource.
      *
      * @param  int  $id
@@ -46,7 +47,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        //GET -> get one user by id
+        return Student::find($id);
     }
 
     /**
