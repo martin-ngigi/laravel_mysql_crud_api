@@ -124,3 +124,24 @@ Migrate:
     "age": 22
 }
 ```
+
+4. PUT -> Update student by id
+- endpoint-> http://127.0.0.1:8000/api/update/1
+- body
+```
+{
+    "name": "Martin 1",
+    "age": 24
+}
+```
+- reponse
+```
+{
+    "id": 1,
+    "created_at": "2023-03-02T08:10:01.000000Z",
+    "updated_at": "2023-03-02T08:44:24.000000Z",
+    "name": "Martin 1",
+    "age": 24
+}
+```
+

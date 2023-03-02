@@ -31,9 +31,15 @@ Route::post('/create', [StudentController::class, 'store']);
  * get all students
  * '/all' is the url
  * 'index' is a method defined in StudentController
- * i.e. http://127.0.0.1:8000/api/create
+ * i.e. http://127.0.0.1:8000/api/all
  */
 Route::get('/all', [StudentController::class, 'index']);
 //
 
-Route::get('/all/{id}', [StudentController::class, 'show']);
+/**
+ * update one student by id
+ * '/update/{id}' is the url
+ * 'update' is a method defined in StudentController
+ * i.e. http://127.0.0.1:8000/api/update/1
+ */
+Route::put('/update/{id}', [StudentController::class, 'update']);

@@ -61,6 +61,9 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $student = Student::find($id);
+        $student->update($request->all());
+        return $student;
     }
 
     /**
