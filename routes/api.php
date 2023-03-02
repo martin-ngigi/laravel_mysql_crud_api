@@ -43,3 +43,12 @@ Route::get('/all', [StudentController::class, 'index']);
  * i.e. http://127.0.0.1:8000/api/update/1
  */
 Route::put('/update/{id}', [StudentController::class, 'update']);
+
+
+/**
+ * delete one student by id
+ * '/delete/{id}' is the url
+ * 'destroy' is a method defined in StudentController
+ * i.e. http://127.0.0.1:8000/api//delete/2
+ */
+Route::delete('/delete/{id}', [StudentController::class, 'destroy']);

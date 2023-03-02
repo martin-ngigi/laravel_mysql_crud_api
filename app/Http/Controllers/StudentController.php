@@ -67,6 +67,7 @@ class StudentController extends Controller
     }
 
     /**
+     * DELETE User
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -75,5 +76,6 @@ class StudentController extends Controller
     public function destroy($id)
     {
         //
+        return Student::destroy($id);
     }
 }
