@@ -19,8 +19,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/**
+ * Create student
+ * '/create' is the url
+ * 'store' is a method defined in StudentController
+ * i.e. http://127.0.0.1:8000/api/create
+ */
 Route::post('/create', [StudentController::class, 'store']);
 
-
-
+/**
+ * get all students
+ * '/all' is the url
+ * 'index' is a method defined in StudentController
+ * i.e. http://127.0.0.1:8000/api/create
+ */
+Route::get('/all', [StudentController::class, 'index']);
 //

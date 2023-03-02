@@ -69,8 +69,8 @@ Migrate:
     php artisan migrate
 ```
 1. POST -> Create student:
-endpoint ->  http://127.0.0.1:8000/api/create/create
-body
+- endpoint ->  http://127.0.0.1:8000/api/create/create
+- body
 ```
 {
     "name": "Martin",
@@ -78,7 +78,7 @@ body
 }
 ```
 
-result
+- result
 ```
 {
     "name": "Martin",
@@ -87,4 +87,26 @@ result
     "created_at": "2023-03-02T08:10:01.000000Z",
     "id": 1
 }
+```
+
+2. GET -> get all students:
+- endpoint ->  http://127.0.0.1:8000/api/all
+- response:
+```
+[
+    {
+        "id": 1,
+        "created_at": "2023-03-02T08:10:01.000000Z",
+        "updated_at": "2023-03-02T08:10:01.000000Z",
+        "name": "Martin",
+        "age": 22
+    },
+    {
+        "id": 2,
+        "created_at": "2023-03-02T08:21:14.000000Z",
+        "updated_at": "2023-03-02T08:21:14.000000Z",
+        "name": "Ken",
+        "age": 27
+    }
+]
 ```
