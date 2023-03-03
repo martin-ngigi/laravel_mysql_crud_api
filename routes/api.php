@@ -44,6 +44,14 @@ Route::get('/all', [StudentController::class, 'index']);
  */
 Route::put('/update/{id}', [StudentController::class, 'update']);
 
+/**
+ * get one student by id
+ * '/all/{id}' is the url
+ * 'show' is a method defined in StudentController
+ * i.e. http://127.0.0.1:8000/api/all/1
+ */
+Route::get('/all/{id}', [StudentController::class, 'show']);
+
 
 /**
  * delete one student by id

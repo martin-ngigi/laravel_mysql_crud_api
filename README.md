@@ -81,11 +81,16 @@ Migrate:
 - result
 ```
 {
-    "name": "Martin",
-    "age": 22,
-    "updated_at": "2023-03-02T08:10:01.000000Z",
-    "created_at": "2023-03-02T08:10:01.000000Z",
-    "id": 1
+    "code": 201,
+    "success": true,
+    "timestamp": "2023-03-03T07:20:10.504825Z",
+    "data": {
+        "name": "Simon",
+        "age": 14,
+        "updated_at": "2023-03-03T07:20:10.000000Z",
+        "created_at": "2023-03-03T07:20:10.000000Z",
+        "id": 4
+    }
 }
 ```
 
@@ -94,22 +99,27 @@ Migrate:
 - endpoint ->  http://127.0.0.1:8000/api/all
 - response:
 ```
-[
-    {
-        "id": 1,
-        "created_at": "2023-03-02T08:10:01.000000Z",
-        "updated_at": "2023-03-02T08:10:01.000000Z",
-        "name": "Martin",
-        "age": 22
-    },
-    {
-        "id": 2,
-        "created_at": "2023-03-02T08:21:14.000000Z",
-        "updated_at": "2023-03-02T08:21:14.000000Z",
-        "name": "Ken",
-        "age": 27
-    }
-]
+{
+    "code": 200,
+    "success": true,
+    "timestamp": "2023-03-03T07:19:51.837206Z",
+    "data": [
+        {
+            "id": 1,
+            "created_at": "2023-03-02T08:10:01.000000Z",
+            "updated_at": "2023-03-03T07:19:42.000000Z",
+            "name": "Martin Wainaina",
+            "age": 23
+        },
+        {
+            "id": 3,
+            "created_at": "2023-03-03T04:30:14.000000Z",
+            "updated_at": "2023-03-03T04:30:14.000000Z",
+            "name": "David",
+            "age": 54
+        }
+    ]
+}
 ```
 
 3. GET -> get one student by id:
@@ -117,11 +127,16 @@ Migrate:
 - response :
 ```
 {
-    "id": 1,
-    "created_at": "2023-03-02T08:10:01.000000Z",
-    "updated_at": "2023-03-02T08:10:01.000000Z",
-    "name": "Martin",
-    "age": 22
+    "code": 200,
+    "success": true,
+    "timestamp": "2023-03-03T07:19:21.541273Z",
+    "data": {
+        "id": 1,
+        "created_at": "2023-03-02T08:10:01.000000Z",
+        "updated_at": "2023-03-02T08:44:24.000000Z",
+        "name": "Martin 1",
+        "age": 24
+    }
 }
 ```
 
@@ -137,11 +152,28 @@ Migrate:
 - reponse
 ```
 {
-    "id": 1,
-    "created_at": "2023-03-02T08:10:01.000000Z",
-    "updated_at": "2023-03-02T08:44:24.000000Z",
-    "name": "Martin 1",
-    "age": 24
+    "code": 200,
+    "success": true,
+    "timestamp": "2023-03-03T07:19:42.541503Z",
+    "data": {
+        "id": 1,
+        "created_at": "2023-03-02T08:10:01.000000Z",
+        "updated_at": "2023-03-03T07:19:42.000000Z",
+        "name": "Martin Wainaina",
+        "age": 23
+    }
+}
+```
+
+5. DELETE - > delete student by id
+- endpoint -> http://127.0.0.1:8000/api/delete/4
+- response 
+```
+{
+    "code": 200,
+    "success": true,
+    "timestamp": "2023-03-03T07:20:20.901837Z",
+    "data": 1
 }
 ```
 

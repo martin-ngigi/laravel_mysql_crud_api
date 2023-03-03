@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class StudentController extends Controller
 {
@@ -16,7 +17,16 @@ class StudentController extends Controller
     public function index()
     {
         //get all students
-        return Student::all();
+
+        $data = Student::all();
+        $response = [
+            "code"=>200,
+            "success"=>true,
+            "timestamp"=>  Carbon::now(),
+            "data"=> $data
+        ];
+
+        return $response;
 
     }
 
@@ -32,10 +42,19 @@ class StudentController extends Controller
         //validate data
         $request->validate([
             'name' =>'required',
-            'age'=>'required',
+            'age'=>'required | max:3',
         ]);
 
-        return Student::create($request->all());
+        $data = Student::create($request->all());
+
+        $response = [
+            "code"=>201,
+            "success"=>true,
+            "timestamp"=>  Carbon::now(),
+            "data"=> $data
+        ];
+
+        return $response;
     }
 
     /**
@@ -48,7 +67,15 @@ class StudentController extends Controller
     public function show($id)
     {
         //GET -> get one user by id
-        return Student::find($id);
+        $data =  Student::find($id);
+        $response = [
+            "code"=>200,
+            "success"=>true,
+            "timestamp"=>  Carbon::now(),
+            "data"=> $data
+        ];
+
+        return $response;
     }
 
     /**
@@ -63,7 +90,15 @@ class StudentController extends Controller
         //
         $student = Student::find($id);
         $student->update($request->all());
-        return $student;
+
+        $response = [
+            "code"=>200,
+            "success"=>true,
+            "timestamp"=>  Carbon::now(),
+            "data"=> $student
+        ];
+
+        return $response;
     }
 
     /**
@@ -76,6 +111,15 @@ class StudentController extends Controller
     public function destroy($id)
     {
         //
-        return Student::destroy($id);
+        $data = Student::destroy($id);
+        $response = [
+            "code"=>200,
+            "success"=>true,
+            "timestamp"=>  Carbon::now(),
+            "data"=> $data
+        ];
+
+        return $response;
+
     }
 }
